@@ -4,7 +4,7 @@ async function getCurrentTab() {
     return tab;
 };
   
-chrome.tabs.onActivated.addListener(() => {
+chrome.tabs.onActivated.addListener(async () => {
     const currentTab = await getCurrentTab();
-    console.log(`tab changed to ${currentTab}`);
+    console.log(`tab changed to ${currentTab.url}`);
 });
